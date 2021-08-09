@@ -1,0 +1,30 @@
+//Navigation
+.nav {
+    background-color: #1876f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 5%; 
+}
+
+.logo {
+    width: 160px;
+    margin-right: 45px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.list {
+
+    &__item {
+        list-style: none;
+        display: inline-block;
+    }
+
+    &__img {
+        width: 28px;
+    }
+}
