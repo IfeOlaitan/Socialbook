@@ -1,0 +1,36 @@
+
+const navUser = document.querySelector('.nav-user');
+const settingsMenu = document.querySelector('.settings-menu');
+const darkBtn = document.querySelector('#dark-btn')
+
+
+const settingsMenuToggle = function () {
+    settingsMenu.classList.toggle('settings-menu-height');
+}
+
+const toggleDarkMode = function () {
+    darkBtn.classList.toggle('dark-btn-on');
+    document.body.classList.toggle('dark-theme');
+
+    if (localStorage.getItem("theme") === "light") {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light")
+    }
+}
+
+
+if (localStorage.getItem("theme") === "light") {
+    darkBtn.classList.remove("dark-btn-on");
+    document.body.classList.remove('dark-theme');
+} else if (localStorage.getItem("theme") === "dark") {
+    darkBtn.classList.add("dark-btn-on");
+    document.body.classList.add('dark-theme');
+} else {
+    localStorage.setItem("theme", "light");
+}
+
+
+//Event Listeners
+navUser.addEventListener('click', settingsMenuToggle);
+darkBtn.addEventListener('click', toggleDarkMode);
